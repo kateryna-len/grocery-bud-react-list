@@ -3,6 +3,7 @@ import './App.css';
 import Form from './components/Form';
 import { nanoid } from 'nanoid';
 import Items from './components/Items';
+import { ToastContainer } from 'react-toastify';
 
 // const getLocalStorage = () => {
 //   let list = localStorage.getItem('list');
@@ -38,10 +39,12 @@ function App() {
     setItem(newItems);
     setLocalStorage(newItems);
   };
+
   return (
     <section className="section-center ">
       <Form addItem={addItem} />
       <Items items={items} removeItem={removeItem} />
+      <ToastContainer position="top-center" />
     </section>
   );
 }
